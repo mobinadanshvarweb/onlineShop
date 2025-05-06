@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getCategoriesId } from "../../services/getCategoriesId";
 import { categoryEn } from "../../type/categoryEn";
 import type { Products } from "../../type/product-type";
+import CategoryCart from "./CategoryCart";
 
 const CategoriesId = () => {
   const { id } = useParams<{ id: string }>();
@@ -15,15 +16,20 @@ const CategoriesId = () => {
   console.log(data);
 
   return (
-    <div>
-      {id}-{enId}
-      <div className="px-3 border border-red-500">
-        {data?.map((item: Products) => {
-          return (
-            <span className="px-3 border border-amber-600">{item.id}</span>
-          );
-        })}
-      </div>
+    <div className="w-full px-16  flex flex-wrap">
+      {data?.map((item: Products) => {
+        return (
+          <CategoryCart
+            key={item.id}
+            price={item.price}
+            src={item.image}
+            title={item.title}
+            rate={item.rating.rate}
+            category={item.category}
+            id={item.id}
+          />
+        );
+      })}
     </div>
   );
 };
