@@ -13,7 +13,7 @@ const Footer = () => {
             ۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم
           </p>
         </div>
-        <div className="flex my-8 items-center justify-between select-none hidden lg:flex text-xs">
+        <div className="my-8 items-center justify-between select-none hidden lg:flex text-xs">
           <a
             className="flex py-3 flex-col items-center justify-between text-center grow"
             data-cro-id="footer-features"

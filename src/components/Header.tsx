@@ -5,7 +5,7 @@ import { Link } from "react-router";
 
 const Header = () => {
   return (
-    <div className="w-full h-24 bg-white flex items-center px-6 shadow">
+    <div className="w-full h-24 bg-white lg:flex items-center px-6 shadow hidden">
       <ul className="flex-1 gap-6 flex items-center justify-start">
         <Link to="/">
           <li>دسته بندی کالاها</li>
