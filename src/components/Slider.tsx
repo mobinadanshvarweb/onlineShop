@@ -18,7 +18,7 @@ const Slider = () => {
           <img
             key={image.id}
             src={`/${image.src}`}
-            className="h-screen lg:h-auto"
+            className="h-screen object-cover lg:h-auto"
           />
         );
       })}
