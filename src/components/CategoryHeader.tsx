@@ -1,6 +1,6 @@
-import { Link } from "react-router";
 import { useCategories } from "../hooks/useCategories";
 import { categoryTranslations } from "../type/categoryTranslate";
+import { NavLink } from "react-router-dom";
 
 const CategoryHeader = () => {
   const { data } = useCategories();
@@ -9,12 +9,18 @@ const CategoryHeader = () => {
     <>
       {data?.map((item: string) => {
         return (
-          <Link to={`category/${categoryTranslations[item]}`} key={item}>
-            <li className="cursor-pointer relative group">
-              {categoryTranslations[item] || item}
-              <span className="absolute w-0 bg-red-400 bottom-0 left-0 h-[1px] group-hover:w-full transition-all duration-300"></span>
-            </li>
-          </Link>
+          <NavLink to={`category/${categoryTranslations[item]}`} key={item}>
+            {({ isActive }) => (
+              <li className="cursor-pointer relative">
+                {categoryTranslations[item] || item}
+                <span
+                  className={`absolute bottom-0 left-0 h-[2px] bg-red-500 transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
+              </li>
+            )}
+          </NavLink>
         );
       })}
     </>

@@ -6,13 +6,14 @@ import ProductDetail from "./pages/ProductDetail";
 import Login from "./pages/auth/login/Login";
 import Signup from "./pages/auth/signup/Signup";
 import AuthLayout from "./pages/auth/AuthLayout";
+import Home from "./pages/home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-      // { index: true, element: <Categories /> },
+      { index: true, element: <Home /> },
       { path: "category", element: <Categories /> },
       { path: "category/:id", element: <CategoriesId /> },
       { path: "product/:id", element: <ProductDetail /> },

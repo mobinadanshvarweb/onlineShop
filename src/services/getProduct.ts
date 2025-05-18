@@ -9,7 +9,7 @@ export const getCategories = async () => {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.error("خطا در دریافت محصولات:", error);
+    console.error("خطا  دسته بندی:", error);
   }
 };
 export const getProductId = async (id: string) => {
