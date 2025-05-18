@@ -14,7 +14,13 @@ const Slider = () => {
   return (
     <div className="w-full border overflow-x-hidden flex relative">
       {src.map((image) => {
-        return <img key={image.id} src={`/${image.src}`} />;
+        return (
+          <img
+            key={image.id}
+            src={`/${image.src}`}
+            className="h-screen lg:h-auto"
+          />
+        );
       })}
       <div className="flex gap-1 absolute bottom-2 left-[50%] translate-x-[-50%] px-10">
         {src.map((item) => {
